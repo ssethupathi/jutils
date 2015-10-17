@@ -1,4 +1,4 @@
-package jutils.test;
+package jutils.jee.test;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Random;

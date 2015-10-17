@@ -1,4 +1,4 @@
-package jutils.test;
+package jutils.jee.test;
 
 import javax.resource.ResourceException;
 import javax.resource.cci.Connection;

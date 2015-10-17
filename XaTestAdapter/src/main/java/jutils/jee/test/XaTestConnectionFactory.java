@@ -1,4 +1,4 @@
-package jutils.test;
+package jutils.jee.test;
 
 import javax.naming.NamingException;
 import javax.naming.Reference;

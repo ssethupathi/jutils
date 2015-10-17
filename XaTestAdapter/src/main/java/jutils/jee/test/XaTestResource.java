@@ -1,4 +1,4 @@
-package jutils.test;
+package jutils.jee.test;
 
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;

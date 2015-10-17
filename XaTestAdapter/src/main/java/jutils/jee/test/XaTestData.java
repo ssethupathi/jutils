@@ -1,4 +1,4 @@
-package jutils.test;
+package jutils.jee.test;
 
 import java.util.HashMap;
 import java.util.Map;

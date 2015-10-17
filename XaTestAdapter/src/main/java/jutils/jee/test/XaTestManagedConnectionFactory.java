@@ -1,4 +1,4 @@
-package jutils.test;
+package jutils.jee.test;
 
 import java.io.PrintWriter;
 import java.util.Set;
