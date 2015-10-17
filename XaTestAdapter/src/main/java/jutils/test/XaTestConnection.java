@@ -1,4 +1,4 @@
-package com.temenos.test;
+package jutils.test;
 
 import java.util.logging.Logger;
 
@@ -42,5 +42,9 @@ public class XaTestConnection implements Connection {
 	public ResultSetInfo getResultSetInfo() throws ResourceException {
 		logger.info("XaTestConnection#getResultSetInfo()");
 		return null;
+	}
+	
+	public XaTestManagedConnection getManagedConnection() {
+		return managedConnection;
 	}
 }

@@ -1,4 +1,4 @@
-package com.temenos.test;
+package jutils.test;
 
 import java.io.PrintWriter;
 
@@ -13,12 +13,14 @@ import javax.transaction.xa.XAResource;
 
 public class XaTestManagedConnection implements ManagedConnection {
 
+	private XaTestConnection connection;
+
 	public void addConnectionEventListener(ConnectionEventListener arg0) {
 
 	}
 
-	public void associateConnection(Object arg0) throws ResourceException {
-
+	public void associateConnection(Object connection) throws ResourceException {
+		this.connection = (XaTestConnection) connection;
 	}
 
 	public void cleanup() throws ResourceException {
@@ -31,7 +33,10 @@ public class XaTestManagedConnection implements ManagedConnection {
 
 	public Object getConnection(Subject arg0, ConnectionRequestInfo arg1)
 			throws ResourceException {
-		return null;
+		if (connection == null) {
+			connection = new XaTestConnection(this);
+		}
+		return connection;
 	}
 
 	public LocalTransaction getLocalTransaction() throws ResourceException {

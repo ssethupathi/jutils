@@ -1,4 +1,4 @@
-package com.temenos.test;
+package jutils.test;
 
 import javax.resource.ResourceException;
 import javax.resource.cci.Connection;
@@ -8,9 +8,9 @@ import javax.resource.cci.Record;
 import javax.resource.cci.ResourceWarning;
 
 public class XaTestInteraction implements Interaction {
-	
+
 	private XaTestConnection connection;
-	
+
 	public XaTestInteraction(XaTestConnection connection) {
 		this.connection = connection;
 	}
@@ -25,7 +25,13 @@ public class XaTestInteraction implements Interaction {
 
 	public Record execute(InteractionSpec interactionSpec, Record record)
 			throws ResourceException {
-		return null;
+		XaTestConnection connection = (XaTestConnection) getConnection();
+		XaTestManagedConnection managedConnection = connection
+				.getManagedConnection();
+		XaTestService service = new XaTestSimpleService(managedConnection);
+		service.execute(buildData((XaTestInteractionSpec) interactionSpec,
+				(XaTestRecord) record));
+		return record;
 	}
 
 	public boolean execute(InteractionSpec arg0, Record arg1, Record arg2)
@@ -34,11 +40,21 @@ public class XaTestInteraction implements Interaction {
 	}
 
 	public Connection getConnection() {
-		return null;
+		return connection;
 	}
 
 	public ResourceWarning getWarnings() throws ResourceException {
 		return null;
 	}
 
+	private XaTestData buildData(XaTestInteractionSpec interactionSpec,
+			XaTestRecord record) {
+		if (record != null) {
+			return record.getData();
+		}
+		if (interactionSpec == null) {
+			interactionSpec = new XaTestInteractionSpec();
+		}
+		return interactionSpec.getData();
+	}
 }

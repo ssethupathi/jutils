@@ -1,4 +1,4 @@
-package com.temenos.test;
+package jutils.test;
 
 import java.io.PrintWriter;
 import java.util.Set;

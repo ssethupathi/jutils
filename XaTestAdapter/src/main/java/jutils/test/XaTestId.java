@@ -1,4 +1,4 @@
-package com.temenos.test;
+package jutils.test;
 
 import java.io.UnsupportedEncodingException;
 import java.util.Random;
@@ -9,6 +9,8 @@ public class XaTestId implements Xid {
 
 	private static byte[] branchQualifier;
 	private byte[] globalTxnId;
+
+	private String value;
 
 	static {
 		try {
@@ -32,5 +34,17 @@ public class XaTestId implements Xid {
 			new Random().nextBytes(globalTxnId);
 		}
 		return globalTxnId;
+	}
+
+	public String toString() {
+		if (value == null) {
+			try {
+				value = new String(globalTxnId, "UTF-8") + "-" + getFormatId()
+						+ "-" + new String(getBranchQualifier(), "UTF-8");
+			} catch (UnsupportedEncodingException e) {
+				// won't happen
+			}
+		}
+		return value;
 	}
 }
