@@ -6,7 +6,7 @@
 	<display-name>XaTesterAdapter</display-name>
 	<vendor-name>Temenos</vendor-name>
 	<eis-type>XaTester</eis-type>
-	<resourceadapter-version>0.1</resourceadapter-version>
+	<resourceadapter-version>0.0.1</resourceadapter-version>
 	<resourceadapter>
 		<outbound-resourceadapter>
 			<connection-definition>
