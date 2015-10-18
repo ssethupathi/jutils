@@ -4,8 +4,8 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.temenos.test</groupId>
 	<artifactId>XaTestAdapter</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<packaging>rar</packaging>
+	<version>0.0.1</version>
+	<packaging>jar</packaging>
 	<name>XaTestAdapter</name>
 
 	<dependencies>
@@ -23,23 +23,23 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>XaTestAdapter</finalName>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-rar-plugin</artifactId>
-					<version>2.4</version>
-					<executions>
-						<execution>
-							<id>rar</id>
-							<goals>
-								<goal>rar</goal>
-							</goals>
-						</execution>
-					</executions>
-				</plugin>
-			</plugins>
-		</pluginManagement>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<descriptor>src/assembly/bin.xml</descriptor>
+				</configuration>
+				<executions>
+					<execution>
+						<id>build-rar</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
 	</build>
 </project>

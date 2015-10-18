@@ -2,7 +2,7 @@
 <weblogic-connector xmlns="http://www.bea.com/ns/weblogic/weblogic-connector" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.bea.com/ns/weblogic/weblogic-connector http://www.bea.com/ns/weblogic/weblogic-connector/1.0/weblogic-connector.xsd">
   <native-libdir></native-libdir>
   <jndi-name>jca/XaTestAdapter</jndi-name>
-  <enable-access-outside-app>false</enable-access-outside-app>
+  <enable-access-outside-app>true</enable-access-outside-app>
   <enable-global-access-to-classes>true</enable-global-access-to-classes>
   <security></security>
 </weblogic-connector>
