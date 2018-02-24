@@ -2,7 +2,6 @@
     <wb-module deploy-name="XaTestAdapter">
         <wb-resource deploy-path="/" source-path="/src/main/java" tag="defaultRootSource"/>
         <wb-resource deploy-path="/" source-path="/src/test/java"/>
-        <wb-resource deploy-path="/" source-path="/src/main/rar"/>
         <property name="java-output-path" value="/XaTestAdapter/build/classes"/>
     </wb-module>
 </project-modules>
